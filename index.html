@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-hjD7dmf8T9ub7FyrFZ1MYWw0zPvROcOZzPkU5o8e62I='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://front-desk-api.onrender.com; object-src 'none'; base-uri 'self'; form-action 'self'" />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/front-desk-web/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Front Desk</title>
+    <!-- Invite-only prototype: keep it out of search results. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <script>
+      // Applied before React mounts so switching themes never flashes the
+      // wrong palette for a frame (the alternative — doing this in a
+      // useEffect — paints light mode first even when dark is stored).
+      (function () {
+        try {
+          var stored = localStorage.getItem("front-desk-theme");
+          var systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          var dark = stored ? stored === "dark" : systemDark;
+          if (stored === "system" || !stored) dark = systemDark;
+          document.documentElement.classList.toggle("dark", dark);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/front-desk-web/assets/index-D3amK5cg.js"></script>
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/page-header-ChOcP8nt.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/dist-CYG_9KRD.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/src-is19Od7z.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/Combination-1Z3Zl7Sz.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/dist-DQgEsR6x.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/dist-BgoJxarg.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/dist-BkfjQ6Nw.js">
+    <link rel="modulepreload" crossorigin href="/front-desk-web/assets/skeleton-DDWGZBEb.js">
+    <link rel="stylesheet" crossorigin href="/front-desk-web/assets/index-BkxiLIN7.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font-family: system-ui, sans-serif; max-width: 30rem; margin: 4rem auto; padding: 0 1rem; line-height: 1.5">
+        <strong>The Front Desk needs JavaScript to run.</strong> Please turn it on in your browser settings and reload this page.
+      </p>
+    </noscript>
+  </body>
+</html>
